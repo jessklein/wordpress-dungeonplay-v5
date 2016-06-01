@@ -1,0 +1,591 @@
+/*
+	Theme Name: Dungeon Play
+	Theme URI: http://www.dungeonplay.net/
+	Description: Latest theme for Dungeon Play
+	Author: Lassirra
+	Author URI: http://www.dungeonplay.net/
+	Version: 5.1
+*/
+
+/* Special Fonts */
+@font-face {
+    font-family: 'SnicklesRegular';
+    src: url('Snickles-webfont.eot');
+    src: url('Snickles-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Snickles-webfont.woff') format('woff'),
+         url('Snickles-webfont.ttf') format('truetype'),
+         url('Snickles-webfont.svg#SnicklesRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'LeagueGothicRegular';
+    src: url('League_Gothic-webfont.eot');
+    src: url('League_Gothic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('League_Gothic-webfont.woff') format('woff'),
+         url('League_Gothic-webfont.ttf') format('truetype'),
+         url('League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Basic Structure */
+body {
+	margin: 20px 0px;
+}
+#wrapper {
+	width: 960px;
+	margin: 0px auto;
+}
+#blog, #guides {
+	padding: 15px;
+}
+#blog .post {
+	margin-bottom: 15px;
+	width: 610px;
+	float: left;
+}
+#intro {
+	padding: 0px;
+}
+#intro h1 {
+	margin: 0px;
+	padding: 0px 15px;
+}
+#intro p {
+	padding: 0px 10px;
+}
+
+#nav {
+	width: 958px;
+	height: 23px;
+	display:block;
+	clear: both;
+	margin-bottom: 0px;
+	padding: 1px 0px;
+}
+#nav ul {
+	list-style:none;
+	margin: 0px;
+}
+#nav li {
+	float:left;
+	padding: 0px 10px;
+}
+#nav a {
+	display:block;
+	text-decoration:none;
+	color: #f5ca40;
+}
+#nav ul ul {
+	display:none;
+	top:100%;
+	left:0;
+	float:left;
+	z-index:99999;
+	background: #212121;
+}
+#nav ul ul ul {
+	top: 30%;
+	left:100%;
+	background: #343434;
+}
+#nav ul ul a {
+	height:auto;
+	line-height:1em;
+	padding:10px;
+	width:130px;
+}
+#nav li:hover > a, #nav ul ul:hover > a {
+	color:#ccc;
+}
+#nav ul li:hover > ul {
+	display:block;
+}
+
+#catwrap {
+	margin-top: 15px;
+	clear: both;
+}
+.cat-left {
+	float: left;
+	clear: left;
+	width: 49%;
+}
+.cat-right {
+	float: right;
+	clear: right;
+	width: 49%;
+	margin-right: 2px;
+}
+.cat-small-left, .cat-small-right {
+	width: 100%;
+	float: left;
+	margin-bottom: 15px;
+}
+.cat-small-left h3, .cat-small-right h3 {
+	margin: 0px;
+	padding: 0px 15px;
+}
+.cat-small-left p, .cat-small-right p {
+	margin: 3px 10px;
+}
+.clear {
+	clear: both;
+}
+
+.post p {
+	padding: 3px 15px;
+}
+.post h3.entrytitle, .sidebar .widget h2.widgettitle {
+	margin: 0px;
+	padding: 2px 15px;
+}
+.entry h1, .entry h2, .entry h3, .entry h4, .entry h5, .entry h6 {
+	margin: 5px 15px;
+}
+.entry blockquote h3 {
+	margin: 0px;
+	padding: 2px 15px;
+}
+.entry blockquote {
+	padding: 0px;
+	margin: 15px 100px;
+}
+.entry .wp-caption {
+	margin: 0px 15px 15px 15px;
+}
+.entry .wp-caption img {
+	padding: 5px;
+}
+.entry .wp-caption p {
+	margin: 5px;
+	padding: 0px 5px;
+}
+.entry .attachment-post-thumbnail {
+	width: 150px;
+	padding: 15px;
+	float: left;
+}
+.postmetadata {
+	clear: both;
+	padding: 2px 15px;
+	margin: 0px;
+}
+.postmetadata .postdate {
+	padding-left: 20px;
+}
+.postmetadata .postcat, .postmetadata .postauthor, .postmetadata .postcomments {
+	padding-left: 20px;
+	margin-left: 15px;
+}
+
+.commentlist {
+	margin: 0px;
+}
+ol.commentlist {
+	margin: 0px;
+	padding: 0px;
+}
+.commentlist li.comment {
+	margin: 5px;
+	padding: 5px 0px 0px 5px;
+}
+h3#comments, #respond h3 {
+	margin: 5px 15px;
+}
+.commentlist img.avatar {
+	float: right;
+	margin-right: 5px;
+	padding: 2px;
+}
+
+.sidebar {
+	width: 300px;
+	float: right;
+}
+.sidebar .widget {
+	margin-bottom: 15px;
+}
+.sidebar .widget ul {
+	margin: 15px;
+	padding-left: 0px;
+}
+.sidebar .widget ul li {
+	margin-left: 10px;
+}
+.sidebar .widget_search div {
+	margin: 5px !important;
+}
+.sidebar .widget div {
+	margin: 15px;
+}
+.sidebar img.outside {
+	margin-bottom: 15px;
+}
+
+.navigation {
+	clear: both;
+}
+.pagination {
+	clear:both;
+	padding: 0px;
+	position: relative;
+}
+.pagination span, .pagination a {
+	display: block;
+	float: left;
+	margin: 2px 2px 2px 0;
+	padding: 6px 9px 5px 9px;
+}
+.pagination .current {
+	padding: 6px 9px 5px 9px;
+}
+
+img.size-auto, img.size-full, img.size-large, img.size-medium, .attachment img {
+	max-width: 100%; /* When images are too wide for containing element, force them to fit. */
+	height: auto; /* Override height to match resized width for correct aspect ratio. */
+}
+.alignleft, img.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 24px;
+	margin-top: 4px;
+}
+.alignright, img.alignright {
+	display: inline;
+	float: right;
+	margin-left: 24px;
+	margin-top: 4px;
+}
+.aligncenter, img.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+img.alignleft, img.alignright, img.aligncenter {
+	margin-bottom: 12px;
+}
+
+.post table {
+	margin: 5px 25px;
+}
+.post table tbody th, .post table tbody td {
+	margin: 0px;
+	padding: 2px 5px;
+}
+
+.clear {
+	clear: both;
+}
+
+/*  === Styling === */
+body {
+	font-family: Tahoma, Verdana, Arial, sans-serif;
+	font-size: 12px;
+	color: #252525;
+	background: url('images/dpbackground.jpg') top center no-repeat fixed #201306;
+}
+
+/* Links */
+a img {
+	border: 0px;
+}
+a:link, a:visited {
+	text-decoration: none;
+	color: #a22600;
+}
+a:hover {
+	text-decoration: none;
+	color: #000;
+}
+
+/* Wrap */
+#blog, #guides {
+	background: url('images/wrapbg.jpg');
+	border: 1px solid #37220d;
+	-moz-box-shadow: 0px 0px 10px #000;
+	-webkit-box-shadow: 0px 0px 10px #000;
+	box-shadow: 0px 0px 10px #000;
+}
+
+/* Intro Box */
+#intro {
+	background: url('images/postbg.jpg');
+	border: 1px solid #674627;
+}
+#intro h1 {
+	background: url('images/dpheadbg.jpg');
+	font-family: 'SnicklesRegular', Arial, Verdana, sans-serif;
+	text-shadow: 1px 1px 2px #000;
+	font-size: 24px;
+	font-weight: normal;
+	color: #fe7b00;
+}
+#intro p {
+	font-family: Tahoma, Arial, Verdana, sans-serif;
+	font-size: 14px;
+	line-height: 22px;
+}
+
+
+/* Navigation Menu */
+#nav {
+	background: url('images/dpmenubg.jpg');
+	border-top: 1px solid #37220d;
+	border-right: 1px solid #37220d;
+	border-left: 1px solid #37220d;
+	-moz-box-shadow: 0px 0px 10px #000;
+	-webkit-box-shadow: 0px 0px 10px #000;
+	box-shadow: 0px 0px 10px #000;
+	text-shadow: 1px 1px 2px #000;
+	font-family: 'LeagueGothicRegular', Arial, Verdana, sans-serif;
+	font-weight: normal;
+	font-size: 20px;
+}
+
+/* Guide Categories */
+.cat-small-left, .cat-small-right {
+	background: url('images/postbg.jpg');
+	border: 1px solid #674627;
+}
+.cat-small-left h3, .cat-small-right h3 {
+	font-family: 'LeagueGothicRegular', Arial, Verdana, sans-serif;
+	color: #000;
+	font-weight: normal;
+	font-size: 20px;
+}
+h3.dk_cat {
+	background: url('images/dkbg.jpg');
+}
+h3.druid_cat {
+	background: url('images/druidbg.jpg');
+}
+h3.hunter_cat {
+	background: url('images/hunterbg.jpg');
+}
+h3.mage_cat {
+	background: url('images/magebg.jpg');
+}
+h3.paladin_cat {
+	background: url('images/paladinbg.jpg');
+}
+h3.priest_cat {
+	background: url('images/priestbg.jpg');
+}
+h3.rogue_cat {
+	background: url('images/roguebg.jpg');
+}
+h3.shaman_cat {
+	background: url('images/shamanbg.jpg');
+}
+h3.warlock_cat {
+	background: url('images/warlockbg.jpg');
+}
+h3.warrior_cat {
+	background: url('images/warriorbg.jpg');
+}
+.posttitle-small {
+	font-weight: bold;
+}
+.post-updated {
+	font-size: 10px;
+}
+
+/* Posts */
+.post {
+	background: url('images/postbg.jpg');
+	border: 1px solid #674627;
+	font-family: Tahoma, Arial, Verdana, sans-serif;
+	font-size: 14px;
+	line-height: 22px;
+}
+.post h3.entrytitle, .sidebar .widget h2.widgettitle {
+	background: url('images/dpheadbg.jpg');
+	border-bottom: 1px solid #160a00;
+	font-family: 'LeagueGothicRegular', Arial, Verdana, sans-serif;
+	text-shadow: 1px 1px 2px #000;
+	font-size: 20px;
+	font-weight: normal;
+	line-height: 22px;
+	color: #fe7b00;
+}
+.post h3.entrytitle a {
+	color: #fe7b00;
+}
+.post h3.entrytitle a:hover, .sidebar .widget h2.widgettitle a:hover {
+	color: #f9c124;
+}
+.entry {
+	border-top: 1px solid #f5deb9;
+}
+.entry h2 {
+	font-size: 35px;
+	font-family: 'LeagueGothicRegular', Arial, Verdana, sans-serif;
+	font-weight: normal;
+	line-height: 37px;
+	color: #543217;
+}
+.entry h3 {
+	font-size: 18px;
+}
+.entry h4 {
+	font-size: 14px;
+	font-style: italic;
+}
+.entry blockquote h3 {
+	background: url('images/dpheadbg.jpg');
+	border-bottom: 1px solid #160a00;
+	font-family: 'LeagueGothicRegular', Arial, Verdana, sans-serif;
+	text-shadow: 1px 1px 2px #000;
+	font-size: 18px;
+	font-weight: normal;
+	line-height: 22px;
+	color: #fe7b00;
+}
+.entry blockquote h3 a:hover {
+	color: #f9c124;
+}
+.entry blockquote {
+	background-color: rgba(102,64,32,0.25);
+	border: 1px solid #674627;
+}
+.entry blockquote p {
+	font-style: italic;
+	font-size: 12px;
+	line-height: 18px;
+}
+.entry ul {
+	list-style-type: square;
+}
+.entry ul li, .entry ol li {
+	font-size: 12px;
+	line-height: 18px;
+}
+.entry .wp-caption {
+	background-color: rgba(102,64,32,0.25);
+	border: 1px solid #674627;
+	font-size: 10px;
+	line-height: 14px;
+	color: #240000;
+}
+.postmetadata {
+	background-color: rgba(102,64,32,0.25);
+	font-size: 12px;
+	line-height: 20px;
+}
+.postmetadata .postdate {
+	background: url('images/calendar_view_day.png') no-repeat;
+}
+.postmetadata .postcat {
+	background: url('images/MiniIcon_ClassTrainer.png') no-repeat;
+}
+.postmetadata .postauthor {
+	background: url('images/Tabardgossipicon.png') no-repeat;
+}
+.postmetadata .postcomments {
+	background: url('images/Gossipgossipicon.png') no-repeat;
+}
+
+
+/* Tables */
+.post table tbody th {
+	background-color: rgba(102,64,32,0.5);
+}
+.post table tbody th, .post table tbody td {
+	border: 1px solid #674627;
+}
+.post table tbody tr.odd {
+	background-color: rgba(102,64,32,0.25);
+}
+.post table tbody td {
+	font-size: 12px;
+	vertical-align: top;
+	line-height: 18px;
+}
+
+/* Comments */
+.comments-template {
+	border-top: 1px solid #674627;
+}
+h3#comments, #respond h3 {
+	font-size: 25px;
+	font-family: 'LeagueGothicRegular', Arial, Verdana, sans-serif;
+	font-weight: normal;
+	line-height: 30px;
+	color: #543217;
+}
+.commentlist {
+	list-style: none;
+}
+.commentlist li.comment {
+	background-color: rgba(102,64,32,0.25);
+	border: 1px solid #674627;
+}
+.commentlist ul {
+	list-style: none;
+}
+.comment-body p {
+	font-size: 12px;
+	line-height: 18px;
+}
+.commentlist img.avatar {
+	background-color: rgba(102,64,32,0.25);
+	border: 1px solid #674627;
+}
+.comment-author {
+	font-size: 12px;
+}
+.comment-author .fn {
+	font-family: 'LeagueGothicRegular', Arial, Verdana, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+}
+.comment-meta {
+	font-size: 10px;
+}
+.comment-body .reply {
+	font-size: 11px;
+	font-weight: bold;
+}
+
+/* Pagination */
+.pagination {
+	font-size: 11px;
+	line-height: 13px;
+}
+.pagination span, .pagination a {
+	background-color: rgba(102,64,32,0.5);
+	border: 1px solid #674627;
+	text-decoration: none;
+	width: auto;
+}
+.pagination a:hover{
+	background-color: rgba(102,64,32,0.25);
+	border: 1px solid #674627;
+}
+.pagination .current {
+	background-color: rgba(102,64,32,0.25);
+	border: 1px solid #674627;
+}
+
+/* Sidebar */
+.sidebar .widget {
+	background: url('images/postbg.jpg');
+	border: 1px solid #674627;
+	font-family: Tahoma, Arial, Verdana, sans-serif;
+}
+.sidebar li {
+	list-style: none;
+	margin-left: 0px;
+}
+.sidebar .widget ul li {
+	list-style-type: square;
+}
+
+/* Footer */
+#footer {
+	text-align: center;
+	color: #000;
+}
